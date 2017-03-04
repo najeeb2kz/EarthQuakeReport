@@ -125,7 +125,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("format", "geojson");
-        uriBuilder.appendQueryParameter("limit", "10");
+        uriBuilder.appendQueryParameter("limit", "100");
         uriBuilder.appendQueryParameter("minmag", minMagnitude);  //minMagnitude=6
         uriBuilder.appendQueryParameter("orderby", orderBy);
         // https://earthquake.usgs.gov/fdsnws/event/1/[METHOD[?PARAMETERS]]
