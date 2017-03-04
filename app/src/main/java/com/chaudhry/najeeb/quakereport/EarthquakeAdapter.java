@@ -32,8 +32,9 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
-        //getItem(position) is defined in super class ArrayAdapter.  This method returns item in the list at given idex position
-        //Find the earthquake at the given position in the list of earthquakes
+        // getItem(position) is defined in super class ArrayAdapter
+        // This method returns item in the list at given index position
+        // Find the earthquake at the given position in the list of earthquakes
         Earthquake currentEarthquake = getItem(position);
 
         //++++++++++  magnitudeTextView  ++++++++++
@@ -57,8 +58,8 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         String primaryLocation;
         String locationOffset;
 
-        //Split method splits using a delimiter into string array but delimiter is not included in any part of string array
-        //so in this case I have to add "off" back in the first node of string array
+        //split() method splits using a delimiter into string array but delimiter is not included in any part of string
+        //array so in this case I have to add "off" back in the first node of string array
         if (originalLocation.contains(LOCATION_SEPARATOR)) {
             String[] parts = originalLocation.split(LOCATION_SEPARATOR);
             locationOffset = parts[0] + LOCATION_SEPARATOR;
@@ -77,7 +78,8 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
 
         //++++++++++  timeTextView  ++++++++++
-        //So far time is in milliseconds.  Convert into good looking date and time format.  Create date object
+        // So far time is in milliseconds.  Convert into good looking date and time format.
+        // First create date object
         Date dateObject = new Date(currentEarthquake.getDate());
 
         // Find the TextView with view ID date

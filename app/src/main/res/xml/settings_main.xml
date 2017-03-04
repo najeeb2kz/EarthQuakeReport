@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- All preferences are saved as key-value pairs in the default SharedPreferences with the key
+    specified through this xml.  To retrieve an instance of those preferences, call the following
+    with a context in the same package as the fragment:
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(android.content.Context);-->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/settings_title">

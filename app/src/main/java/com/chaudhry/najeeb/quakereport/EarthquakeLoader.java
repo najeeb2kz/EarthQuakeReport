@@ -14,9 +14,9 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
     private String mUrl;
 
 
-     // Constructs a new {@link EarthquakeLoader}
-     // @param context of the activity
-     // @param url to load data from
+    // Constructs a new {@link EarthquakeLoader}
+    // @param context of the activity
+    // @param url to load data from
     public EarthquakeLoader(Context context, String url) {
         super(context);
         mUrl = url;
@@ -26,7 +26,8 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
     //Subclasses must implement this to take care of loading their data, as per startLoading()
     @Override
     protected void onStartLoading() {
-        forceLoad();   //Force an asynchronous load
+        // This is required to trigger the loader to start doing background work
+        forceLoad();   // Force an asynchronous load
     }
 
 

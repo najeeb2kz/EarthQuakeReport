@@ -146,8 +146,8 @@ public final class QueryUtils {
             JSONArray earthquakeArray = rootJsonObject.getJSONArray("features");
 
             if (earthquakeArray.length() > 0) {
-                //For each earthquake in the earthquakeArray, create an {@link Earthquake} object
-                //Iterate the earthquakeArray and print the info of JSONObjects
+                // For each earthquake in the earthquakeArray, create an {@link Earthquake} object
+                // Iterate the earthquakeArray and print the info of JSONObjects
                 for (int i = 0; i < earthquakeArray.length(); i++) {
                     // Get a single earthquake at position i within the list of earthquakes
                     JSONObject currentEartquake = earthquakeArray.getJSONObject(i);

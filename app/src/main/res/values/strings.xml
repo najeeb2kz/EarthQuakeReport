@@ -7,7 +7,7 @@
     <string name="no_internet_connection">No Internet Connection</string>
     <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
     <string name="settings_menu_item">Settings</string>
-    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] This will display in action bar-->
     <string name="settings_title">Earthquake Settings</string>
 
     <!-- Strings For Minimum Magnitude Preference [CHAR LIMIT=30] -->

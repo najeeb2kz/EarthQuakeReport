@@ -27,9 +27,10 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
 
     private static final String LOG_TAG = EarthquakeActivity.class.getName();
 
+    //Google search: earthquake api: https://earthquake.usgs.gov/fdsnws/event/1/
     //URL for earthquake data from the USGS dataset
     private static final String USGS_REQUEST_URL =
-            "http://earthquake.usgs.gov/fdsnws/event/1/query";
+            "https://earthquake.usgs.gov/fdsnws/event/1/query";
 
     //Constant value for the earthquake loader ID. We can choose any integer.
     //This really only comes into play if you're using multiple loaders.
@@ -118,14 +119,21 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
                 getString(R.string.settings_order_by_key),
                 getString(R.string.settings_order_by_default));
 
+        // USGS_REQUEST_URL = "http://earthquake.usgs.gov/fdsnws/event/1/query"
+        // abstract class Uri > method buildUpon()
         Uri baseUri = Uri.parse(USGS_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("format", "geojson");
-        uriBuilder.appendQueryParameter("limit", "100");
-        uriBuilder.appendQueryParameter("minmag", minMagnitude);
+        uriBuilder.appendQueryParameter("limit", "10");
+        uriBuilder.appendQueryParameter("minmag", minMagnitude);  //minMagnitude=6
         uriBuilder.appendQueryParameter("orderby", orderBy);
+        // https://earthquake.usgs.gov/fdsnws/event/1/[METHOD[?PARAMETERS]]
+        // Complete query:
+        //  http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&minmag=6&orderby=magnitude
 
+        // In this method onCreateLoader() we must create and return a loader.
+        // How to do that?  Subclass AsyncTaskLoader.  EarthquakeLoader is subclass of AsyncTaskLoader.
         return new EarthquakeLoader(this, uriBuilder.toString());
     }
 
